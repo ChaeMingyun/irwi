@@ -22,7 +22,7 @@ Irwi
 &nbsp;&nbsp;&nbsp;&nbsp;└[irwi](#irwi-디렉토리)  
 &nbsp;&nbsp;└spec  
 &nbsp;&nbsp;&nbsp;└comparators 
-&nbsp;&nbsp;&nbsp; extensions 
+&nbsp;&nbsp;&nbsp;└extensions 
 &nbsp;&nbsp;&nbsp;└formatters 
 &nbsp;&nbsp;&nbsp;└helpers 
 &nbsp;&nbsp;&nbsp;└paginators 
