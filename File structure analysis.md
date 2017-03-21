@@ -18,10 +18,10 @@ Irwi
 &nbsp;&nbsp;└app   
 &nbsp;&nbsp;&nbsp;&nbsp;└views  
 &nbsp;&nbsp;└[lib](#lib-디렉토리)  
-&nbsp;&nbsp;&nbsp;&nbsp;└[generator](#generator-디렉토리)  
+&nbsp;&nbsp;&nbsp;&nbsp;└[generator](#generator-디렉토리)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[irwi](#irwi-디렉토리)  
 &nbsp;&nbsp;└spec  
-&nbsp;&nbsp;&nbsp;└comparators 
+&nbsp;&nbsp;&nbsp;└[comparators] (#comparators-)
 &nbsp;&nbsp;&nbsp;└extensions 
 &nbsp;&nbsp;&nbsp;└formatters 
 &nbsp;&nbsp;&nbsp;└helpers 
