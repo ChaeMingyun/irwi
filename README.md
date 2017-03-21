@@ -7,7 +7,7 @@ this repo is made to understand about irwi gem in [Communis](http://communis.clu
 
 *   Karoid Jeong (https://github.com/Karoid)
 *   Philip Chae (https://github.com/ChaeMingyun)
-*   신동헌 (https://github.com/854575)
+*   안재영 (https://github.com/854575)
 
 ## Read annotation
 
