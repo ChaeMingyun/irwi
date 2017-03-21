@@ -20,6 +20,12 @@ Irwi
 &nbsp;&nbsp;└[lib](#lib-디렉토리)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[generator](#generator-디렉토리)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[irwi](#irwi-디렉토리)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[comparators](#comparators-)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[extensions](#extensions-디렉토리)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[formatters](#formatters)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[helpers](#helpers)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[paginators](#paginators)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[support](#support)
 &nbsp;&nbsp;└spec  
 &nbsp;&nbsp;&nbsp;└[comparators](#comparators-)
 &nbsp;&nbsp;&nbsp;└[extensions](#extensions-디렉토리)
