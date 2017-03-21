@@ -21,6 +21,13 @@ Irwi
 &nbsp;&nbsp;&nbsp;&nbsp;└[generator](#generator-디렉토리)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[irwi](#irwi-디렉토리)  
 &nbsp;&nbsp;└spec  
+&nbsp;&nbsp;&nbsp;└comparators
+&nbsp;&nbsp;&nbsp;└extensions
+&nbsp;&nbsp;&nbsp;└formatters
+&nbsp;&nbsp;&nbsp;└helpers
+&nbsp;&nbsp;&nbsp;└paginators
+&nbsp;&nbsp;&nbsp;└support
+
 
 ### lib 디렉토리
 * irwi.rb  
