@@ -26,7 +26,7 @@ Irwi
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[helpers](#helpers)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[paginators](#paginators)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[support](#support)
-&nbsp;&nbsp;└spec  
+&nbsp;&nbsp;└[spec](#Spec-디렉토리)
 &nbsp;&nbsp;&nbsp;└[comparators](#comparators-)
 &nbsp;&nbsp;&nbsp;└[extensions](#extensions-디렉토리)
 &nbsp;&nbsp;&nbsp;└[formatters](#formatters)
@@ -78,4 +78,4 @@ Irwi
     * route_mapper.rb  
     wiki의 라우팅 포인트를 지정해준다.
     
-### Spect 
+### Spec 
