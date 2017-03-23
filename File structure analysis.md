@@ -88,5 +88,11 @@ Irwi
     모르겠다ㅠㅠ<!--수정요망-->
     * route_mapper.rb  
     wiki의 라우팅 포인트를 지정해준다.
-    
-### Spec 
+
+### Spec directory
+  ##### comparators 디렉토리
+  ##### extensions 디렉토리
+  ##### formatters 디렉토리
+  ##### helpers 디렉토리
+  ##### paginators 디렉토리
+  ##### support 디렉토리
