@@ -15,10 +15,9 @@ show_allowed?, history_allowed?, edit_allowed? 이 세가지 메소드를 오버
 ___
 ## 디렉토리 분석
 Irwi  
-<<<<<<< HEAD
 &nbsp;&nbsp;└[app](#app)   
-&nbsp;&nbsp;&nbsp;&nbsp;└[views](#views)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[base_wiki_pages](#base_wiki_pages)  
+&nbsp;&nbsp;&nbsp;└[views](#views)  
+&nbsp;&nbsp;&nbsp;&nbsp;└[base_wiki_pages](#base_wiki_pages)  
 &nbsp;&nbsp;└[lib](#lib-디렉토리)  
 &nbsp;&nbsp;&nbsp;└[generator](#generator-디렉토리)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[irwi_wiki](#irwi_wiki)  
@@ -47,30 +46,10 @@ Irwi
 &nbsp;&nbsp;&nbsp;└[extensions](#extensions-디렉토리)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[controllers](#controllers)
 &nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)
-=======
-&nbsp;&nbsp;└app   
-&nbsp;&nbsp;&nbsp;&nbsp;└views  
-&nbsp;&nbsp;└[lib](#lib-디렉토리)  
-&nbsp;&nbsp;&nbsp;&nbsp;└[generator](#generator-디렉토리)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[irwi_wiki](#irwi_wiki)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[irwi_wiki_attachment](#irwi_wiki_attachment)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[irwi_wiki_view](#irwi_wiki_view)  
-&nbsp;&nbsp;&nbsp;&nbsp;└[irwi](#irwi-디렉토리)   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[comparators](#comparators-)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[extensions](#extensions-디렉토리)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[formatters](#formatters)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[helpers](#helpers)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[paginators](#paginators)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[support](#support)  
-&nbsp;&nbsp;└[spec](#Spec-디렉토리)  
-&nbsp;&nbsp;&nbsp;└[comparators](#comparators-)  
-&nbsp;&nbsp;&nbsp;└[extensions](#extensions-디렉토리)  
->>>>>>> 6bed19270e89748a236f8d58b682475c946f1027
-&nbsp;&nbsp;&nbsp;└[formatters](#formatters)  
-&nbsp;&nbsp;&nbsp;└[helpers](#helpers)  
-&nbsp;&nbsp;&nbsp;└[paginators](#paginators)  
-&nbsp;&nbsp;&nbsp;└[support](#support)  
-
+&nbsp;&nbsp;&nbsp;└[formatters](#formatters)
+&nbsp;&nbsp;&nbsp;└[helpers](#helpers)
+&nbsp;&nbsp;&nbsp;└[paginators](#paginators)
+&nbsp;&nbsp;&nbsp;└[support](#support)
 
 ### lib 디렉토리
 * irwi.rb  
@@ -137,14 +116,10 @@ Irwi
     * route_mapper.rb  
     wiki의 라우팅 포인트를 지정해준다.
 
-<<<<<<< HEAD
 ### Spec 디렉토리
-=======
-### Spec 
->>>>>>> 6bed19270e89748a236f8d58b682475c946f1027
-  ##### comparators 디렉토리
-  ##### extensions 디렉토리
-  ##### formatters 디렉토리
-  ##### helpers 디렉토리
-  ##### paginators 디렉토리
-  ##### support 디렉토리
+  #### comparators 디렉토리
+  #### extensions 디렉토리
+  #### formatters 디렉토리
+  #### helpers 디렉토리
+  #### paginators 디렉토리
+  #### support 디렉토리
