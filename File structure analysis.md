@@ -44,11 +44,22 @@ Irwi
 #### generator 디렉토리
 이 부분은 기본적으로 [Rails Engine](http://guides.rubyonrails.org/engines.html)에 대한 개념이 있어야 이해할 수 있다.
 #### irwi 디렉토리
+  ##### comparators 디렉토리
+  ##### extensions 디렉토리
+  ##### formatters 디렉토리
+  ##### helpers 디렉토리
+  ##### paginators 디렉토리
+  ##### support 디렉토리
+  
   * config.rb  
+  > [attr_ 명령어](http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer): attr_writer 는 setter 이고 attr_reader 는 getter 이다.
+  
   Gem의 변수 기본값을 설정해준다. 이 값을 수정하여 Customization을 실현할 수 있다.
   * formatter.rb  
   변수 PROVIDERS를 정의한다. PROVIDERS는 마크다운 문법을 구현시키는 GEM의 목록을 배열의 형태로 담고 있다. autodetector 클래스를 이용해, Gem을 찾는 모양이다.
   > include와 extend 명령어:
+  
+  > [.freeze 명령어](http://apidock.com/ruby/Object/freeze): 다음과 같이 배열에 ["red_cloth", “red_carpet", "blue_cloth", "wiki_cloth", "simple_html"] 값이 할당 되어있으면 나중에 배열의 값이 변경되는 것을 방지해준다. 만약에 배열의 값을 변경하려고 시도한다면, RuntimeError 가 발생한다.
 
   * helpers.rb  
   이 파일은 기본적으로 헬퍼를 관리하는 파일이다.  
