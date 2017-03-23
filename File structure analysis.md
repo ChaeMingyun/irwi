@@ -21,22 +21,22 @@ Irwi
 &nbsp;&nbsp;└[lib](#lib-디렉토리)  
 &nbsp;&nbsp;&nbsp;└[generator](#generator-디렉토리)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[irwi_wiki](#irwi_wiki)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[templates](#templates)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[controllers](#controllers)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[helpers](#helpers)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[migrate](#migrate)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[templates](#templates)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[controllers](#controllers)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[helpers](#helpers)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[migrate](#migrate)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[irwi_wiki_attachment](#irwi_wiki_attachment)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[templates](#templates)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[migrate](#migrate)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[templates](#templates)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[migrate](#migrate)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[irwi_wiki_view](#irwi_wiki_view)  
 &nbsp;&nbsp;&nbsp;└[irwi](#irwi-디렉토리)   
 &nbsp;&nbsp;&nbsp;&nbsp;└[comparators](#comparators)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[spans](#spans)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[spans](#spans)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[extensions](#extensions-디렉토리)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[controllers](#controllers)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[controllers](#controllers)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[formatters](#formatters)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[helpers](#helpers)  
 &nbsp;&nbsp;&nbsp;&nbsp;└[paginators](#paginators)  
@@ -44,12 +44,12 @@ Irwi
 &nbsp;&nbsp;└[spec](#Spec-디렉토리)  
 &nbsp;&nbsp;&nbsp;└[comparators](#comparators-)  
 &nbsp;&nbsp;&nbsp;└[extensions](#extensions-디렉토리)  
-&nbsp;&nbsp;&nbsp;&nbsp;└[controllers](#controllers)
-&nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)
-&nbsp;&nbsp;&nbsp;└[formatters](#formatters)
-&nbsp;&nbsp;&nbsp;└[helpers](#helpers)
-&nbsp;&nbsp;&nbsp;└[paginators](#paginators)
-&nbsp;&nbsp;&nbsp;└[support](#support)
+&nbsp;&nbsp;&nbsp;&nbsp;└[controllers](#controllers)  
+&nbsp;&nbsp;&nbsp;&nbsp;└[models](#models)  
+&nbsp;&nbsp;&nbsp;└[formatters](#formatters)  
+&nbsp;&nbsp;&nbsp;└[helpers](#helpers)  
+&nbsp;&nbsp;&nbsp;└[paginators](#paginators)  
+&nbsp;&nbsp;&nbsp;└[support](#support)  
 
 ### lib 디렉토리
 * irwi.rb  
@@ -66,26 +66,14 @@ Irwi
   ##### helpers 디렉토리
   ##### paginators 디렉토리
   ##### support 디렉토리
-<<<<<<< HEAD
 
   * config.rb  
   > [attr_ 명령어](http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer): attr_writer 는 setter 이고 attr_reader 는 getter 이다.
-
-=======
   
-  * config.rb  
-  > [attr_ 명령어](http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer): attr_writer 는 setter 이고 attr_reader 는 getter 이다.
-  
->>>>>>> 6bed19270e89748a236f8d58b682475c946f1027
   Gem의 변수 기본값을 설정해준다. 이 값을 수정하여 Customization을 실현할 수 있다.
   * formatter.rb  
   변수 PROVIDERS를 정의한다. PROVIDERS는 마크다운 문법을 구현시키는 GEM의 목록을 배열의 형태로 담고 있다. autodetector 클래스를 이용해, Gem을 찾는 모양이다.
   > include와 extend 명령어:
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> 6bed19270e89748a236f8d58b682475c946f1027
   > [.freeze 명령어](http://apidock.com/ruby/Object/freeze): 다음과 같이 배열에 ["red_cloth", “red_carpet", "blue_cloth", "wiki_cloth", "simple_html"] 값이 할당 되어있으면 나중에 배열의 값이 변경되는 것을 방지해준다. 만약에 배열의 값을 변경하려고 시도한다면, RuntimeError 가 발생한다.
 
   * helpers.rb  
