@@ -123,9 +123,12 @@ module Irwi::Extensions::Controllers::WikiPages
 
   def select_template_status(template)
     case template
-    when 'no' then 404
-    when 'not_allowed' then 403
-    else 200
+      when 'no' then
+        404
+      when 'not_allowed' then
+        403
+      else
+        200
     end
   end
 

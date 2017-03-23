@@ -4,7 +4,7 @@ module Irwi::Helpers::WikiPagesHelper
 
   # Edit form for wiki page model
   def wiki_page_form(config = {}, &block)
-    form_for(@page, { as: :page, url: url_for(action: :update), html: { class: 'wiki_form', method: :post } }.merge!(config), &block)
+    form_for(@page, {as: :page, url: url_for(action: :update), html: {class: 'wiki_form', method: :post}}.merge!(config), &block)
   end
 
   def wiki_page_new_path
@@ -54,7 +54,7 @@ module Irwi::Helpers::WikiPagesHelper
   end
 
   IRWI_LINK_REGEXP =
-    /\[\[
+      /\[\[
       (?:([^\[\]\|]+)\|)?
       ([^\[\]]+)
      \]\]
@@ -107,25 +107,25 @@ module Irwi::Helpers::WikiPagesHelper
   def wiki_page_info(page = nil)
     page ||= @page # By default take page from instance variable
 
-    render partial: "#{template_dir '_wiki_page_info'}/wiki_page_info", locals: { page: page }
+    render partial: "#{template_dir '_wiki_page_info'}/wiki_page_info", locals: {page: page}
   end
 
   def wiki_page_actions(page = nil)
     page ||= @page # By default take page from instance variable
 
-    render partial: "#{template_dir '_wiki_page_actions'}/wiki_page_actions", locals: { page: page }
+    render partial: "#{template_dir '_wiki_page_actions'}/wiki_page_actions", locals: {page: page}
   end
 
   def wiki_page_history(page = nil, versions = nil)
     page ||= @page # By default take page from instance variable
     versions ||= @versions || page.versions
 
-    render partial: "#{template_dir '_wiki_page_history'}/wiki_page_history", locals: { page: page, versions: versions, with_form: (versions.size > 1) }
+    render partial: "#{template_dir '_wiki_page_history'}/wiki_page_history", locals: {page: page, versions: versions, with_form: (versions.size > 1)}
   end
 
   def wiki_page_attachments(page = @page)
     return unless Irwi.config.page_attachment_class_name
 
-    render partial: "#{template_dir '_wiki_page_actions'}/wiki_page_attachments", locals: { page: page }
+    render partial: "#{template_dir '_wiki_page_actions'}/wiki_page_attachments", locals: {page: page}
   end
 end

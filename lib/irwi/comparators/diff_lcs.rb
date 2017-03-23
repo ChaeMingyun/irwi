@@ -22,10 +22,14 @@ class Irwi::Comparators::DiffLcs < Irwi::Comparators::Base
 
   def append_change(change, changes)
     case change.action
-    when '=' then append_not_changed(changes, change.old_element)
-    when '+' then append_added(changes, change.new_element)
-    when '-' then append_removed(changes, change.old_element)
-    when '!' then append_replaced(changes, change.old_element, change.new_element)
+      when '=' then
+        append_not_changed(changes, change.old_element)
+      when '+' then
+        append_added(changes, change.new_element)
+      when '-' then
+        append_removed(changes, change.old_element)
+      when '!' then
+        append_replaced(changes, change.old_element, change.new_element)
     end
   end
 

@@ -20,7 +20,9 @@ module Irwi
     end
   end
 
-  module Extensions; end
+  module Extensions
+    ;
+  end
 
   autoload :Formatters, 'irwi/formatters'
   autoload :Paginators, 'irwi/paginators'

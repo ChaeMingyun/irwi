@@ -4,8 +4,8 @@ module Irwi::Support::RouteMapper
   # Defining wiki root mount point
   def wiki_root(root, config = {})
     opts = {
-      controller: 'wiki_pages',
-      root: root
+        controller: 'wiki_pages',
+        root: root
     }.merge(config)
 
     Irwi.config.system_pages.each do |page_action, page_path| # Adding routes for system pages

@@ -20,10 +20,10 @@ class Irwi::Config
 
   def comparator
     @comparator ||= begin
-                      require 'irwi/comparators/diff_lcs'
+      require 'irwi/comparators/diff_lcs'
 
-                      self.comparator = Irwi::Comparators::DiffLcs.new
-                    end
+      self.comparator = Irwi::Comparators::DiffLcs.new
+    end
   end
 
   # Object using to paginate collections
@@ -60,7 +60,7 @@ class Irwi::Config
 
   def system_pages
     @system_pages ||= {
-      'all' => 'all'
+        'all' => 'all'
     }
   end
 

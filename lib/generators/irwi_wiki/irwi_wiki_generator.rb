@@ -13,7 +13,7 @@ class IrwiWikiGenerator < Rails::Generators::Base
     copy_file 'helpers/wiki_pages_helper.rb', 'app/helpers/wiki_pages_helper.rb'
 
     # Models
-    copy_file 'models/wiki_page.rb',         'app/models/wiki_page.rb'
+    copy_file 'models/wiki_page.rb', 'app/models/wiki_page.rb'
     copy_file 'models/wiki_page_version.rb', 'app/models/wiki_page_version.rb'
 
     # Migrations
