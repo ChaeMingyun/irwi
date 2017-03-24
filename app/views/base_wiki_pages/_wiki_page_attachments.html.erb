@@ -1,9 +1,10 @@
+<!-- 좋아요 아이콘 표시 및 삭제 -->
 <% page.attachments.each do |attachment| %>
     <%= image_tag(attachment.wiki_page_attachment.url(:thumb)) %>
     Attachment_<%= attachment.id %>
     <%= link_to(wt('Remove'), wiki_remove_page_attachment_path(attachment.id), method: :delete) %>
 <% end %>
-
+<!-- 신규 가입 페이지로 이동 -->
 <%= form_for(Irwi.config.page_attachment_class.new,
              as: :wiki_page_attachment,
              url: wiki_add_page_attachment_path(page),

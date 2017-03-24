@@ -1,7 +1,9 @@
+
 <% if with_form %>
     <form action="<%= wiki_page_compare_path(@page) %>" method="get">
 <% end %>
 
+<!-- 버전 이력 -->
 <%= wiki_paginate versions do -%>
     <table class="wiki_history">
       <tr class="wiki_history_header">
@@ -15,12 +17,17 @@
             <td>
               <%= v.number %>
               <% if with_form %>
+                  <!-- 바로 이전 커밋 버전 -->
                   <input type="radio" name="old" value="<%= v.number %>" <%= 'checked="true" ' if v == versions[-1] %>/>
+                  <!-- 현재 커밋 버전 -->
                   <input type="radio" name="new" value="<%= v.number %>" <%= 'checked="true" ' if v == versions[-2] %>/>
               <% end %>
             </td>
+            <!-- 마지막 수정 시각 -->
             <td><%= l(v.updated_at, :format => :long) %></td>
+            <!-- 수정한 사람 -->
             <td><%= wiki_user(v.updator) %></td>
+            <!-- 댓글 -->
             <td><%= v.comment %></td>
           </tr>
       <% end %>

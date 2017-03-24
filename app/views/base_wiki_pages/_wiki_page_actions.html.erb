@@ -1,6 +1,11 @@
+<!-- 페이지에서의 액션 -->
 <ul class="wiki_page_actions">
+  <!-- 리스트 표시 -->
   <%= content_tag('li', link_to(wt('List pages'), wiki_all_path)) %>
+  <!-- 변경 이력 -->
   <%= content_tag('li', link_to(wt('History'), wiki_page_history_path(@page))) if history_allowed? %>
+  <!-- 수정 -->
   <%= content_tag('li', link_to(wt('Edit'), wiki_page_edit_path(@page))) if edit_allowed? %>
+  <!-- 삭제 -->
   <%= content_tag('li', link_to(wt('Destroy'), wiki_page_path(@page), :method => :delete, :confirm => wt("Destroyed page can't be restored. Are you sure?"))) if destroy_allowed? %>
 </ul>

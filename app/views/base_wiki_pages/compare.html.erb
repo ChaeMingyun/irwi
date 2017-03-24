@@ -1,7 +1,7 @@
 <%= wiki_page_style %>
-
+<!-- 커밋 전&후 페이지 비교 -->
 <h1><%= wt '%{page_title} - Comparing versions %{old_version} and %{new_version}', :page_title => h(@page.title), :old_version => @old_version.number, :new_version => @new_version.number %></h1>
-
+<!-- 이전 버전 페이지로 이동 -->
 <%= link_to "Back to history", history_wiki_page_path(@page.path) %><br/>
 
 <%= wt 'Changes list:' %>
@@ -11,7 +11,7 @@
 <% end %>
 
 <%= wt 'Changes in content:' %>
-
+<!-- 마지막 버전과 바뀐 내용 비교 -->
 <div class="wiki_diff">
   <%= wiki_diff @old_version.content, @new_version.content %>
 </div>

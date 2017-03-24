@@ -1,3 +1,4 @@
+<!-- 페이지 수정 정보 : 시간/수정자 -->
 <div class="wiki_page_info">
   <%= (wt "Revised on %{time} by %{user}", :time => l(page.updated_at, :format => :long), :user => wiki_user(page.updator)).html_safe %>
 </div>

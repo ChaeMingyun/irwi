@@ -1,7 +1,6 @@
 <%= wiki_page_style -%>
-
 <h1><%= wt 'All pages' %></h1>
-
+<!-- 각 pagination 페이지로 이동 -->
 <ul>
   <%= wiki_paginate @pages do -%>
       <% @pages.each do |page| -%>
