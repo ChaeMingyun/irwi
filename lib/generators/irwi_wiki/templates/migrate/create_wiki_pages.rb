@@ -18,11 +18,8 @@ class CreateWikiPages < ActiveRecord::Migration
     create_table :wiki_page_versions do |t|
       t.integer :page_id, null: false # Reference to page
       t.integer :updator_id # Reference to user, updated page
-
       t.integer :number # Version number
-
       t.string :comment
-
       t.string :path
       t.string :title
 
