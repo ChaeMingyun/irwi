@@ -3,6 +3,7 @@
 irwi/helper 디렉토리에 적어놓은 헬퍼 파일을 autoload 시킨다.
 그러고는 acts_as_wiki_pages_helper 메소드에 위에 불러온 헬퍼파일을 모두 include 시킨다.
 =end
+# autoload : 로드할 파일 위치 지정
 module Irwi::Helpers
   autoload :WikiPagesHelper, 'irwi/helpers/wiki_pages_helper'
   autoload :WikiPageAttachmentsHelper, 'irwi/helpers/wiki_page_attachments_helper'

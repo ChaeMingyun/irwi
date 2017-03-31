@@ -9,6 +9,8 @@ module Irwi::Support::RouteMapper
     }.merge(config)
 
     Irwi.config.system_pages.each do |page_action, page_path| # Adding routes for system pages
+      # dup : 객체의 속성만 복사하고 Association은 복사하지 않는다.
+      #       그리고 Timestamp를 남기지 않는다.
       get("#{root}/#{page_path}", opts.merge(action: page_action.dup))
     end
 

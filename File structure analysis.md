@@ -69,7 +69,7 @@ Irwi
 
   * config.rb  
   > [attr_ 명령어](http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer): attr_writer 는 setter 이고 attr_reader 는 getter 이다.
-  
+
   Gem의 변수 기본값을 설정해준다. 이 값을 수정하여 Customization을 실현할 수 있다.
   * formatter.rb  
   변수 PROVIDERS를 정의한다. PROVIDERS는 마크다운 문법을 구현시키는 GEM의 목록을 배열의 형태로 담고 있다. autodetector 클래스를 이용해, Gem을 찾는 모양이다.
@@ -111,3 +111,12 @@ Irwi
   #### helpers 디렉토리
   #### paginators 디렉토리
   #### support 디렉토리
+
+
+# Include vs Extend
+
+include : 하나의 모듈에 있는 메소드를 다른 모듈이나 클래스에 Inject할 때 사용  
+Extend : which adds module’s methods as instance methods, extend allows you to add them as a class methods.  
+
+# attr_accessor 사용 이유  
+ getter와 setter메소드와 함께 인스턴스 변수를 생성하기 위해 사용되는 루비의 주요 특징이다.  

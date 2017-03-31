@@ -2,7 +2,9 @@ require 'active_record/errors'
 
 module Irwi::Helpers::WikiPageAttachmentsHelper
   def wiki_add_page_attachment_path(page)
+    # respond_to :
     page = page.path if page.respond_to? :path
+    # url_for : url return
     url_for(action: 'add_attachment', path: page)
   end
 

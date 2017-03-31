@@ -1,5 +1,6 @@
 module Irwi
-  module VERSION #:nodoc:
+  module VERSION
+    #:nodoc:
     MAJOR = 0
     MINOR = 5
     TINY = 0
