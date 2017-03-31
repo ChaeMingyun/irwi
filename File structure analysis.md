@@ -63,7 +63,7 @@ Irwi
 * config.rb  
 > [attr_ 명령어](http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer): attr_writer 는 setter 이고 attr_reader 는 getter 이다.
 
-Gem의 변수 기본값을 설정해준다. 이 값을 수정하여 Customization을 실현할 수 있다.
+보통의 config 파일들이 그렇듯이 Gem의 변수 기본값을 설정해준다. 이 파일이 다른 Config와 다른 점은 바로 클래스를 변수로 많이 담았다는 데 있다. 이는 스스로 작성한 클래스로 커스터마이즈 하거나, 다른 이름의 모델을 생성하여 변수값을 바꾸라는 의도로 해석된다.
 * formatter.rb  
 변수 PROVIDERS를 정의한다. PROVIDERS는 마크다운 문법을 구현시키는 GEM의 목록을 배열의 형태로 담고 있다. autodetector 클래스를 이용해, Gem을 찾는 모양이다.
 > include와 extend 명령어:
@@ -109,7 +109,7 @@ WikiPage, WikiPageVersion, WikiPageAttachment 클래스를 include 하기 위해
   * wiki_pages.rb  
   이 파일은 WikiPages 모듈에 대해 적혀있다. controller에 보통 들어갈 내용이 적혀 있다.  
   템플릿 파인더 메소드를 이용해 Gem 외부에 View 파일이 있으면 불러오도록 설정해놓았다.  
-  **WikiPageAttachment 클래스를 통해 파일 관리 페이지도 있으나.. 만들다 만듯하다?**
+  **WikiPageAttachment 클래스를 통해 파일 관리 페이지도 있으나.. 만들다 만듯하다? 실제로 Record를 관리하는 로직만 있을뿐, 관련 Gem과 관련하여 실질적인 파일 업로드 기능이 없다.**
   또한 권한관리를 위해 있는 메소드인 allowed?류의 메소드 기본값이 적혀있다.
 * models 디렉토리
   * wiki_page_attachment.rb  
@@ -126,6 +126,12 @@ WikiPage, WikiPageVersion, WikiPageAttachment 클래스를 include 하기 위해
 
 ##### formatters 디렉토리
 ##### helpers 디렉토리
+  * wiki_page_attachment_helper.rb  
+  두 메소드를 정의한다. wiki_add_page_attachment_path는 해당 페이지에 attachment를 더할 수 있는 링크로 보내주고, wiki_remove_page_attachment_path는 attachment_id 값을 받고 나서 바로 그 attachment를 제거하는 링크로 보내준다.  
+  마지막으로 wiki_show_attachments 헬퍼는 첨부파일을 이미지 태그를 씌워서 출력해준다.
+  * wiki_pages_helper.rb  
+  **... 내일하겠다... 피곤하다..**
+
 ##### paginators 디렉토리
 ##### support 디렉토리
 * template_finder.rb  
