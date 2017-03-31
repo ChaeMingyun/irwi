@@ -104,7 +104,25 @@ Rubygem에서 관리할 Gem의 버젼정보를 VERSION 변수에 담고 있다.
 WikiPage, WikiPageVersion, WikiPageAttachment 클래스를 include 하기 위해 작성되었다.  
 두 클래스는 같은 위치상의 models 디렉토리안에 있다.  
 * controllers 디렉토리
+  * wiki_page_attachments.rb
+  파일을 관리하기 위한 model에 대해 적혀있다. 어떤 파일이 업로드 되면, Irwi.config.page_attachment_class 에 저장되어 있는 파일 목록이 적혀있는 모델의 클래스에 add_attachment가 호출되면 레코드를 집어넣고, remove_attachment가 호출되면 레코드를 삭제한다. 두 메소드 모두 페이지의 컨트롤러 역할을 하는 메소드이다.
+  * wiki_pages.rb  
+  이 파일은 WikiPages 모듈에 대해 적혀있다. controller에 보통 들어갈 내용이 적혀 있다.  
+  템플릿 파인더 메소드를 이용해 Gem 외부에 View 파일이 있으면 불러오도록 설정해놓았다.  
+  **WikiPageAttachment 클래스를 통해 파일 관리 페이지도 있으나.. 만들다 만듯하다?**
+  또한 권한관리를 위해 있는 메소드인 allowed?류의 메소드 기본값이 적혀있다.
 * models 디렉토리
+  * wiki_page_attachment.rb  
+  Paperclip을 사용하는 듯한 코드가 있으나 Gemspec에는 paperclip을 dependencies에 추가하지 않았다. 이는 제작자의 페이지상에서 paperclip을 사용했으나, attachment 관련된 부분은 구현하다가 말았거나 당사자의 프로젝트 안에서만 유효한 파일로 여겨진다.
+  * wiki_page_version.rb  
+  Model 중에 wiki_page_version 모델에 사용되는 내용을 담고 있다. sql문이 직접 사용되어, **no sql DB에서는 사용할시 에러가 일어날 가능성이 다분하다.**  
+  우선 next 와 previous 메소드를 호출하면 같은 페이지의 다음 버젼과 이전 버젼이 호출되도록 하였다.**하지만 이 위키내에서 이 명령은 사용되지 않았고, 실제로 사용해본 결과 invalid value for Integer() 에러가 발생한다**  
+  또한 수정이 일어나지 못하게 되어있다. 수정을 하게되면 ActiveRecordError가 발생한다.  
+  between 이 scope로 처리되어 있는데 이 부분은 lib/irwi/extensions/controller/wiki_pages.rb:89 에서 사용되는 것을 확인하였다. 두 숫자 사이의 버젼을 불러오는듯 하다.
+  * wiki_page.rb
+  find_by_path_or_new 메소드는 모델의 path튜플에 검색해보고 없으면 새로 만드는 메소드입니다. lib/irwi/extensions/controllers/wiki_pages.rb:139 에 사용되었습니다.  
+  last_version_number는 해당 페이지와 대응되는 WikiPageVersion의 number 튜플의 가장 마지막 값을 반환합니다.  
+  또 Version record를 어디서 추가 하는지가 이 안에 있는데, after_save에 걸려있는 create_new_version 메소드를 이용해서 버젼을 기록합니다. 버젼의 내용은 단순하게 이전의 기록 정보를 그대로 담고 있습니다(**얼마나 달라졌는지의 차이를 담지는 않고 있습니다**)
 
 ##### formatters 디렉토리
 ##### helpers 디렉토리
@@ -136,4 +154,8 @@ include : 하나의 모듈에 있는 메소드를 다른 모듈이나 클래스�
 Extend : which adds module’s methods as instance methods, extend allows you to add them as a class methods.  
 
 ## attr_accessor 사용 이유  
- getter와 setter메소드와 함께 인스턴스 변수를 생성하기 위해 사용되는 루비의 주요 특징이다.  
+ getter와 setter메소드와 함께 인스턴스 변수를 생성하기 위해 사용되는 루비의 주요 특징이다.
+
+## module ClassMethods 는 왜 자꾸 쓰이나?
+이 명령어는 꼭 extend ActiveSupport::Concern 과 함께 등장한다.  
+왜 쓰이는지 진심 모르겠으나 한두번 본게 아니다.
