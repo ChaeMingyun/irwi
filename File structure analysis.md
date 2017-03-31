@@ -60,51 +60,66 @@ Irwi
 #### generator 디렉토리
 이 부분은 기본적으로 [Rails Engine](http://guides.rubyonrails.org/engines.html)에 대한 개념이 있어야 이해할 수 있다.
 #### irwi 디렉토리
-  ##### comparators 디렉토리
-  ##### extensions 디렉토리
-  ##### formatters 디렉토리
-  ##### helpers 디렉토리
-  ##### paginators 디렉토리
-  ##### support 디렉토리
+* config.rb  
+> [attr_ 명령어](http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer): attr_writer 는 setter 이고 attr_reader 는 getter 이다.
 
-  * config.rb  
-  > [attr_ 명령어](http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer): attr_writer 는 setter 이고 attr_reader 는 getter 이다.
+Gem의 변수 기본값을 설정해준다. 이 값을 수정하여 Customization을 실현할 수 있다.
+* formatter.rb  
+변수 PROVIDERS를 정의한다. PROVIDERS는 마크다운 문법을 구현시키는 GEM의 목록을 배열의 형태로 담고 있다. autodetector 클래스를 이용해, Gem을 찾는 모양이다.
+> include와 extend 명령어:
+> [.freeze 명령어](http://apidock.com/ruby/Object/freeze): 다음과 같이 배열에 ["red_cloth", “red_carpet", "blue_cloth", "wiki_cloth", "simple_html"] 값이 할당 되어있으면 나중에 배열의 값이 변경되는 것을 방지해준다. 만약에 배열의 값을 변경하려고 시도한다면, RuntimeError 가 발생한다.
 
-  Gem의 변수 기본값을 설정해준다. 이 값을 수정하여 Customization을 실현할 수 있다.
-  * formatter.rb  
-  변수 PROVIDERS를 정의한다. PROVIDERS는 마크다운 문법을 구현시키는 GEM의 목록을 배열의 형태로 담고 있다. autodetector 클래스를 이용해, Gem을 찾는 모양이다.
-  > include와 extend 명령어:
-  > [.freeze 명령어](http://apidock.com/ruby/Object/freeze): 다음과 같이 배열에 ["red_cloth", “red_carpet", "blue_cloth", "wiki_cloth", "simple_html"] 값이 할당 되어있으면 나중에 배열의 값이 변경되는 것을 방지해준다. 만약에 배열의 값을 변경하려고 시도한다면, RuntimeError 가 발생한다.
+* helpers.rb  
+이 파일은 기본적으로 헬퍼를 관리하는 파일이다.  
+irwi/helper 디렉토리에 적어놓은 헬퍼 파일을 autoload 시킨다.  
+그러고는 acts_as_wiki_pages_helper 메소드에 위에 불러온 헬퍼파일을 모두 include 시킨다.
+* paginators.rb  
+변수 PROVIDERS를 정의한다. PROVIDERS는 페이지네이션을 하는 GEM의 목록을 배열의 형태로 담고 있다. autodetector 클래스를 이용해, Gem을 찾는 모양이다.
+* version.rb  
+Rubygem에서 관리할 Gem의 버젼정보를 VERSION 변수에 담고 있다.
 
-  * helpers.rb  
-  이 파일은 기본적으로 헬퍼를 관리하는 파일이다.  
-  irwi/helper 디렉토리에 적어놓은 헬퍼 파일을 autoload 시킨다.  
-  그러고는 acts_as_wiki_pages_helper 메소드에 위에 불러온 헬퍼파일을 모두 include 시킨다.
-  * paginators.rb  
-  변수 PROVIDERS를 정의한다. PROVIDERS는 페이지네이션을 하는 GEM의 목록을 배열의 형태로 담고 있다. autodetector 클래스를 이용해, Gem을 찾는 모양이다.
-  * version.rb  
-  Rubygem에서 관리할 Gem의 버젼정보를 VERSION 변수에 담고 있다.
-  * comparators 디렉토리  
+##### comparators 디렉토리
   Irwi::Comparators::Base 클래스에 위키에 수정이 가해졌을때 어느 부분이 추가되고 어느부분이 제거되었는지, 또 어느부분이 바뀌지 않았는지를 판별하고, 표시하는 메소드를 담고 있다.
-  * extensions 디렉토리
-    * controllers.rb  
-    이 파일은 acts_as_wiki_pages_controller 라는 메소드에 WikiPages와 WikiPageAttachments 클래스를 include 하기 위해 작성되었다.  
-    두 클래스는 같은 위치상의 controllers 디렉토리안에 있다.
-    * models.rb  
-    이 파일은 acts_as_wiki_page, acts_as_wiki_page_version, acts_as_wiki_page_attachment 메소드에 각각
-    WikiPage, WikiPageVersion, WikiPageAttachment 클래스를 include 하기 위해 작성되었다.  
-    두 클래스는 같은 위치상의 models 디렉토리안에 있다.  
-    * controllers 디렉토리
-    * models 디렉토리
-  * support 디렉토리
-    * template_finder.rb  
-    View를 커스터마이제이션 한 경우 (rails g irwi_wiki_views) 그 파일을 가져다 쓰기 위해 작성된 파일
-    * autodetector.rb  
-    모르겠다ㅠㅠ<!--수정요망-->
-    * route_mapper.rb  
-    wiki의 라우팅 포인트를 지정해준다.
+  * base.rb  
+  new_not_changed 메소드는 not_changed_span 클래스를 생성하면서 받은 파라미터 값을 집어넣고, new_changed 메소드는 changed_span 클래스를 생성하면서 받은 파라미터 값을 집어넣는다.  
+  (한마디로 코드 길이 줄이기)
+  * diff_lcs.rb  
+  diff-lcs라는 Gem에 있는 Diff::LCS 클래스를 이용한다. base.rb 파일을 상속받는 Irwi::Comparators::DiffLcs 클래스는 initializer에 diff/lcs 파일을 require 시키는 것으로 보아, 그 내부의 로직을 initializer 메소드 안에서 실행시키는 듯 하다. private 이하에 써있는 메소드는 다른 파일에 적힌 span으로 변환하는 과정을 담아놓았다.
+  * spans 디렉토리  
+  이 디렉토리 내의 파일은 바뀐 내용을 span 안에 표시하기 위한 코드들이 각 파일명의 클래스로 담겨져 있다
+  > alias는 기존의 메소드의 이름을 복제하는 문법이다.  
+  ex) alias 새_이름, 기존_이름
+
+    * changed_span.rb
+    바뀐 부분에 대해서 removed 클래스를 갖는 span과 new 클래스를 갖는 span을 메소드 to_s를 호출했을때 불러온다.
+    * not_changed_span.rb
+    바뀌지 않은 부분에 대해서 action 메소드는 "="을 반환하고, old_value 와 new_value 메소드는 그냥 클래스가 생성될때 입력받은 값을 반환한다
+
+##### extensions 디렉토리
+* controllers.rb  
+이 파일은 acts_as_wiki_pages_controller 라는 메소드에 WikiPages와 WikiPageAttachments 클래스를 include 하기 위해 작성되었다.  
+두 클래스는 같은 위치상의 controllers 디렉토리안에 있다.
+* models.rb  
+이 파일은 acts_as_wiki_page, acts_as_wiki_page_version, acts_as_wiki_page_attachment 메소드에 각각
+WikiPage, WikiPageVersion, WikiPageAttachment 클래스를 include 하기 위해 작성되었다.  
+두 클래스는 같은 위치상의 models 디렉토리안에 있다.  
+* controllers 디렉토리
+* models 디렉토리
+
+##### formatters 디렉토리
+##### helpers 디렉토리
+##### paginators 디렉토리
+##### support 디렉토리
+* template_finder.rb  
+View를 커스터마이제이션 한 경우 (rails g irwi_wiki_views) 그 파일을 가져다 쓰기 위해 작성된 파일
+* autodetector.rb  
+모르겠다ㅠㅠ<!--수정요망-->
+* route_mapper.rb  
+wiki의 라우팅 포인트를 지정해준다.
 
 ### Spec 디렉토리
+Spec디렉토리는 테스트를 위한 코드를 모아놓았다
+
   #### comparators 디렉토리
   #### extensions 디렉토리
   #### formatters 디렉토리
@@ -113,10 +128,12 @@ Irwi
   #### support 디렉토리
 
 
-# Include vs Extend
+# 문법 설명
+
+## Include vs Extend
 
 include : 하나의 모듈에 있는 메소드를 다른 모듈이나 클래스에 Inject할 때 사용  
 Extend : which adds module’s methods as instance methods, extend allows you to add them as a class methods.  
 
-# attr_accessor 사용 이유  
+## attr_accessor 사용 이유  
  getter와 setter메소드와 함께 인스턴스 변수를 생성하기 위해 사용되는 루비의 주요 특징이다.  
