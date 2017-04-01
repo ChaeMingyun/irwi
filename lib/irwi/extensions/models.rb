@@ -17,6 +17,7 @@ ActiveRecord::Base.instance_eval do
 
   def acts_as_wiki_page_attachment
     include Irwi::Extensions::Models::WikiPageAttachment
+    # ???
     yield if block_given?
   end
 end
